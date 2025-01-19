@@ -1,0 +1,46 @@
+{
+	"name": "nextjs-custom-image-client",
+	"version": "0.0.1",
+	"license": "MIT",
+	"author": "Ricardo8Abreu",
+	"description": "Custom Image component for Next.js with loading skeleton and error handling",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"clean": "rm -rf dist"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Ricardo8Abreu/nextjs-custom-image-client.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Ricardo8Abreu/nextjs-custom-image-client/issues"
+	},
+	"keywords": [
+		"nextjs",
+		"image",
+		"react",
+		"skeleton",
+		"loading"
+	],
+	"peerDependencies": {
+		"next": ">=13",
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"devDependencies": {
+		"@types/react": "^18.2.0",
+		"@types/node": "^20.0.0",
+		"typescript": "^5.0.0",
+		"tsup": "^7.0.0",
+		"next": "^13.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
+}
