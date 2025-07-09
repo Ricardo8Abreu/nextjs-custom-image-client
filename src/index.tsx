@@ -1,5 +1,4 @@
-"use client"
-import Image, { type ImageProps } from "next/image"
+import  NextImage, { type ImageProps as NextImageProps } from "next/image"
 import { useState, type CSSProperties, type SyntheticEvent } from "react"
 
 const defaultValues = {
@@ -7,9 +6,9 @@ const defaultValues = {
 }
 
 /**
- * Props for the CustomImage component.
+ * Props for the Image component.
  */
-export interface CustomImageProps extends Omit<ImageProps, "objectFit"> {
+export interface ImageProps extends Omit<NextImageProps, "objectFit"> {
   /**
    * CSS object-fit property for the image.
    */
@@ -20,7 +19,7 @@ export interface CustomImageProps extends Omit<ImageProps, "objectFit"> {
   srcNoImage: string
 }
 
-interface GetSrcProps extends Pick<CustomImageProps, "src" | "srcNoImage"> {
+interface GetSrcProps extends Pick<ImageProps, "src" | "srcNoImage"> {
   error: boolean
 }
 
@@ -34,7 +33,7 @@ const getSrc = ({ src, error, srcNoImage }: GetSrcProps) => {
 /**
  * Custom Image component for Next.js with loading skeleton and error handling.
  */
-const CustomImage = ({ src, alt, fill = true, style, objectFit, srcNoImage, loading = "lazy", onError, onLoad, width, height, ...props }: CustomImageProps) => {
+const Image = ({ src, alt, fill = true, style, objectFit, srcNoImage, loading = "lazy", onError, onLoad, width, height, ...props }: ImageProps) => {
   const [error, setError] = useState(false)
   const [loaded, setLoaded] = useState(false)
 
@@ -59,7 +58,7 @@ const CustomImage = ({ src, alt, fill = true, style, objectFit, srcNoImage, load
   return (
     <>
       {ifShowSkeleton && <div className="skeleton-nextjs-image"></div>}
-      <Image
+      <NextImage
         src={newSrc}
         alt={alt || defaultValues.alt}
         fill={newFill}
@@ -105,5 +104,5 @@ const CustomImage = ({ src, alt, fill = true, style, objectFit, srcNoImage, load
   )
 }
 
-export default CustomImage
+export default Image
 
