@@ -11,11 +11,11 @@ npm install nextjs-custom-image-client
 ## Usage
 
 ```jsx
-import CustomImage from 'nextjs-custom-image-client';
+import Image from 'nextjs-custom-image-client';
 
 function MyComponent() {
   return (
-    <CustomImage
+    <Image
       src="/path/to/image.jpg"
       alt="My image"
       srcNoImage="/path/to/fallback.jpg"

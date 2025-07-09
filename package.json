@@ -1,6 +1,6 @@
 {
 	"name": "nextjs-custom-image-client",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"license": "MIT",
 	"author": "Ricardo8Abreu",
 	"description": "Custom Image component for Next.js with loading skeleton and error handling",
